@@ -1,0 +1,11 @@
+﻿@page
+@model WebAppiFilm.Pages.FilmesModel
+@{
+}
+<div class="text-center">
+    @foreach (var item in Model.Films)
+    {
+        <a href="SelectedFilm/@item.Id">@item.Name</a>       
+        <br />
+    }
+</div>
