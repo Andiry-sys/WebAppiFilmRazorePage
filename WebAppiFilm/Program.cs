@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddScoped<IFilmService,FilmService.Service.FilmService>();
+builder.Services.AddFilmService();
 
 var app = builder.Build();
 

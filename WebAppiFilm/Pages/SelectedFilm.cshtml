@@ -1,11 +1,12 @@
-﻿@page "{Id?}"
+﻿@page "{id?}"
+
 @model WebAppiFilm.Pages.SelectedFilmModel
 @{
     ViewData["Title"] = Model.Name;
 }
 
 <div class="text-center">
-    <h3>@Model.Name</h3>
+    <h2>@Model.Name</h2>
     <p>@Model.Producer</p>
     <p>@Model.Style</p>
     <p>@Model.AboutFilm</p>
