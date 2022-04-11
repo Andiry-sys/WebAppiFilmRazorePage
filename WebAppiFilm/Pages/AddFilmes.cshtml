@@ -1,0 +1,19 @@
+﻿@page
+@model WebAppiFilm.Pages.AddFilmesModel
+@{
+}
+
+<form method="post" class="was-validated">
+    <div class = "text-center" id="filmId">
+        <ol class="rounded">
+            <p>Name: <input asp-for="Name" required /></p>
+            <p>Producer: <input asp-for="Producer" required/></p>
+            <p>Style: <input asp-for="Style" required/></p>
+            <p>About: <input asp-for="AboutFilm" required/></p>
+            <p>Sessions: <input asp-for="Sessions" required/></p>
+            
+           
+           <input type="submit" asp-page-handler="Add" value="Add"/>
+        </ol>
+    </div>
+</form>

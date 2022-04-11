@@ -1,5 +1,6 @@
 using FilmModel;
 using FilmService.Service;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebAppiFilm.Pages
@@ -16,8 +17,15 @@ namespace WebAppiFilm.Pages
             Films  = _filmService.GetFilms();
 
         }
-        public void OnGet()
+        
+        public void OnPost(string text)
         {
+            Films = _filmService.FilterFilms(text);
+        }
+        
+        public IActionResult OnGetAdd()
+        {
+            return RedirectToPage("/FilmesAdd");
         }
     }
 }

@@ -3,10 +3,22 @@
 @{
     ViewData["Title"] = "Filmes";
 }
+
+<form method="post">
+    <input type="search" name="text" class="text" placeholder="Search here"/>
+    <input type="submit" name="submit" class="submit" value="Search"/>
+
 <div class="text-center">
+    <br />
+    <h3>List films</h3>
+    <ol class="rounded">
     @foreach (var item in Model.Films)
     {
-        <a href="SelectedFilm/@item.Id">@item.Name</a>       
+        <li><a href="SelectedFilm/@item.Id">@item.Name</a></li>       
         <br />
     }
+    </ol>
+    <a href="AddFilm">Add Film</a>
 </div>
+
+</form>

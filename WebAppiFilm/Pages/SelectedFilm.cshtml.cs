@@ -10,6 +10,7 @@ namespace WebAppiFilm.Pages
         private readonly IFilmService _filmService;
         private readonly ILogger<SelectedFilmModel> _logger;
         private Film _film=new();
+        
         [BindProperty(SupportsGet = true)]
         public int id { get; set; }
         public string? Name { get => _film.Name;  }
@@ -29,5 +30,17 @@ namespace WebAppiFilm.Pages
             id = Id;
             _film = _filmService.GetFilm(id);
         }
+
+        public IActionResult OnPostDelete(int id)
+        {
+            _filmService.Delete(id);
+            return RedirectToPage("/Filmes");
+        }
+
+        public void OnPostUpdate(Film film)
+        {
+            _filmService.Update(film);
+        }
+        
     }
 }

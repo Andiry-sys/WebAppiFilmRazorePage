@@ -5,10 +5,18 @@
     ViewData["Title"] = Model.Name;
 }
 
-<div class="text-center">
-    <h2>@Model.Name</h2>
-    <p>@Model.Producer</p>
-    <p>@Model.Style</p>
-    <p>@Model.AboutFilm</p>
-    <p>@Model.Sessions</p>
-</div>
+<form method="post">
+    <div class = "text-center" id="filmId">
+        <ol class="rounded">
+            <p>Name: <input asp-for="Name"/></p>
+            <p>Producer: <input asp-for="Producer" /></p>
+            <p>Style: <input asp-for="Style"/> </p>
+            <p>About: <input asp-for="AboutFilm" /></p>
+            <p>Sessions: <input asp-for="Sessions"/></p>
+            
+           
+           <input type="submit" name="submit" class="submit" value="Save" />
+           <input type="submit" asp-page-handler="Delete" value="Delete"/>
+        </ol>
+    </div>
+</form>
